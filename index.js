@@ -6,9 +6,9 @@ const cors = require("cors");
 const app = express();
 const isDev = app.settings.env === "development";
 const URL = isDev
-  ? // localhost 3001 is the one on which the frontend  is running
+  ? // localhost 3000 is the one on which the frontend  is running
     "http://localhost:3000"
-  : "https://sketchbook-sigma.vercel.app";
+  : "https://remote-draw-client.vercel.app/";
 app.use(cors({ origin: URL }));
 const httpServer = createServer(app);
 const io = new Server(httpServer, { cors: URL });
